@@ -15,6 +15,8 @@ ex{1.to_sym} # => "undefined method `to_sym' for 1:Fixnum (NoMethodError)"
 ex{1 + "1"}  # => "String can't be coerced into Fixnum (TypeError)"
 ```
 
+[回答例](https://github.com/higaki/learn_ruby_kansai_86/blob/master/ex1.rb)
+
 ### 演習問題2
 いろいろな例外を捕捉してみよう
 
