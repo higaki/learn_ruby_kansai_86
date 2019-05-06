@@ -1,7 +1,10 @@
-# 対処が同じなら rescue は まとめられる
+KeyError.superclass             # => IndexError
+StopIteration.superclass        # => IndexError
+
+# 親クラスで ひとまとめに rescue
 def ex
   yield
-rescue KeyError, StopIteration
+rescue IndexError
   "#{$!} (#{$!.class})"
 end
 
@@ -17,7 +20,7 @@ ex{[].each.next}                # => "iteration reached an end (StopIteration)"
 # KeyError, StopIteration 以外は捕捉できない
 ex{1 + "1"}
 
-# ~> -:18:in `+': String can't be coerced into Integer (TypeError)
-# ~> 	from -:18:in `block in <main>'
-# ~> 	from -:3:in `ex'
-# ~> 	from -:18:in `<main>'
+# ~> -:21:in `+': String can't be coerced into Integer (TypeError)
+# ~> 	from -:21:in `block in <main>'
+# ~> 	from -:6:in `ex'
+# ~> 	from -:21:in `<main>'
