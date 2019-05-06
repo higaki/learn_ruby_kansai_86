@@ -1,9 +1,7 @@
-# 素直に実装してみた
+# 対処が同じなら rescue は まとめられる
 def ex
   yield
-rescue KeyError
-  "#{$!} (#{$!.class})"
-rescue StopIteration
+rescue KeyError, StopIteration
   "#{$!} (#{$!.class})"
 end
 
@@ -19,7 +17,7 @@ ex{[].each.next}                # => "iteration reached an end (StopIteration)"
 # KeyError, StopIteration 以外は捕捉できない
 ex{1 + "1"}
 
-# ~> -:20:in `+': String can't be coerced into Integer (TypeError)
-# ~> 	from -:20:in `block in <main>'
+# ~> -:18:in `+': String can't be coerced into Integer (TypeError)
+# ~> 	from -:18:in `block in <main>'
 # ~> 	from -:3:in `ex'
-# ~> 	from -:20:in `<main>'
+# ~> 	from -:18:in `<main>'
