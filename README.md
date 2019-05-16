@@ -31,6 +31,10 @@ rescue ...
 end
 ```
 
+- [素直に実装](https://github.com/higaki/learn_ruby_kansai_86/blob/a25ecbc3172b5cf09c1c764413dd7db0fc5ff531/ex2.rb)
+- [rescue は まとめられる](https://github.com/higaki/learn_ruby_kansai_86/blob/0f222ff959bec0acdd77a5e254ec7c1b7b66429a/ex2.rb)
+- [親クラスで ひとまとめに rescue](https://github.com/higaki/learn_ruby_kansai_86/blob/master/ex2.rb)
+
 ### 演習問題3
 以下のコードをデバッグしてみよう
 
@@ -41,6 +45,8 @@ end
 ```ruby
 [0..9].map{|i| i * 2}
 ```
+
+[回答例](https://github.com/higaki/learn_ruby_kansai_86/blob/master/ex3.rb)
 
 ### 演習問題4
 ensure 節で return すると どうなるか調べよう
@@ -54,3 +60,5 @@ ensure
   $stderr.puts :ensure  # ここで return すると ...
 end
 ```
+
+[回答例](https://github.com/higaki/learn_ruby_kansai_86/blob/master/ex4.rb)
